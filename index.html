@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ranjan Kumar Das | Portfolio</title>
+
+    <style>
+
+        /* =========================
+           BASIC
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* =========================
+           HOME
+        ========================== */
+
+        .home {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 80px;
+            padding: 120px 8% 70px;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    rgba(56, 189, 248, 0.15),
+                    transparent 35%
+                );
+        }
+
+        .home-content {
+            max-width: 650px;
+            animation: slideLeft 1s ease;
+        }
+
+        .home h3 {
+            font-size: 25px;
+            color: #94a3b8;
+        }
+
+        .home h1 {
+            font-size: 58px;
+            margin: 10px 0;
+        }
+
+        .home h1 span {
+            color: #38bdf8;
+        }
+
+        .home p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+
+        .home-image {
+            animation: slideRight 1s ease;
+        }
+
+        .home-image img {
+            width: 320px;
+            height: 320px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid #38bdf8;
+
+            box-shadow:
+                0 0 35px rgba(56, 189, 248, 0.35);
+
+            transition: 0.4s;
+        }
+
+        .home-image img:hover {
+            transform: scale(1.05);
+
+            box-shadow:
+                0 0 60px rgba(56, 189, 248, 0.7);
+        }
+
+        /* =========================
+           BUTTON
+        ========================== */
+
+        .btn {
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            background: #38bdf8;
+            color: #0f172a;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            border: none;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0ea5e9;
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 25px rgba(56, 189, 248, 0.25);
+        }
+
+        /* =========================
+           SOCIAL LINKS
+        ========================== */
+
+        .social-links {
+            margin-top: 22px;
+
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: #38bdf8;
+
+            text-decoration: none;
+
+            border: 1px solid #38bdf8;
+
+            padding: 7px 15px;
+
+            border-radius: 20px;
+
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        /* =========================
+           COMMON SECTIONS
+        ========================== */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .title {
+            text-align: center;
+
+            font-size: 38px;
+
+            margin-bottom: 45px;
+        }
+
+        .title span {
+            color: #38bdf8;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        #about {
+            background: #111c31;
+        }
+
+        .about {
+            max-width: 800px;
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .about p {
+            color: #cbd5e1;
+            font-size: 18px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .skill {
+            margin-bottom: 25px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+
+            margin-bottom: 8px;
+        }
+
+        .skill-name span:last-child {
+            color: #38bdf8;
+        }
+
+        .bar {
+            height: 10px;
+
+            background: #1e293b;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+        .bar span {
+            display: block;
+
+            height: 100%;
+
+            background: linear-gradient(
+                90deg,
+                #0ea5e9,
+                #38bdf8
+            );
+
+            border-radius: 10px;
+        }
+
+        .html {
+            width: 90%;
+        }
+
+        .css {
+            width: 85%;
+        }
+
+        .js {
+            width: 75%;
+        }
+
+        .python {
+            width: 70%;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        #projects {
+            background: #111c31;
+        }
+
+        .projects-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project {
+            background: #1e293b;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            border: 1px solid
+                rgba(56, 189, 248, 0.12);
+
+            transition: 0.4s;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+
+            border-color: #38bdf8;
+
+            box-shadow:
+                0 15px 40px
+                rgba(56, 189, 248, 0.15);
+        }
+
+        .project h3 {
+            color: #38bdf8;
+
+            margin-bottom: 12px;
+
+            font-size: 22px;
+        }
+
+        .project p {
+            color: #cbd5e1;
+
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           REVIEWS
+        ========================== */
+
+        #reviews {
+            background: #0f172a;
+
+            text-align: center;
+        }
+
+        .review-subtitle {
+            color: #94a3b8;
+
+            margin-bottom: 30px;
+        }
+
+        .review-form {
+            max-width: 600px;
+
+            margin: auto;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+        .review-form input,
+        .review-form select,
+        .review-form textarea {
+            width: 100%;
+
+            padding: 15px;
+
+            border: 1px solid
+                rgba(56, 189, 248, 0.15);
+
+            border-radius: 10px;
+
+            background: #1e293b;
+
+            color: white;
+
+            font-size: 16px;
+
+            outline: none;
+        }
+
+        .review-form input:focus,
+        .review-form select:focus,
+        .review-form textarea:focus {
+            border-color: #38bdf8;
+        }
+
+        .review-form textarea {
+            min-height: 130px;
+
+            resize: vertical;
+        }
+
+        .review-form button {
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #38bdf8;
+
+            color: #0f172a;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .review-form button:hover {
+            background: #0ea5e9;
+
+            transform: translateY(-2px);
+        }
+
+        /* Reviews displayed */
+
+        .reviews-list {
+            max-width: 900px;
+
+            margin: 50px auto 0;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+
+            text-align: left;
+        }
+
+        .review-card {
+            background: #1e293b;
+
+            padding: 22px;
+
+            border-radius: 12px;
+
+            border-left: 3px solid #38bdf8;
+        }
+
+        .review-card h4 {
+            color: #38bdf8;
+
+            margin-bottom: 5px;
+        }
+
+        .review-card .stars {
+            margin-bottom: 10px;
+        }
+
+        .review-card p {
+            color: #cbd5e1;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        #contact {
+            background: #111c31;
+        }
+
+        .contact-form {
+            max-width: 600px;
+
+            margin: auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+
+            padding: 14px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid
+                rgba(56, 189, 248, 0.15);
+
+            border-radius: 8px;
+
+            outline: none;
+
+            background: #1e293b;
+
+            color: white;
+
+            font-size: 16px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #38bdf8;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+
+            resize: none;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            text-align: center;
+
+            padding: 25px;
+
+            background: #020617;
+
+            color: #94a3b8;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================== */
+
+        @keyframes slideLeft {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateX(0);
+            }
+        }
+
+        @keyframes slideRight {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateX(0);
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 15px 5%;
+
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 12px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            .home {
+                flex-direction: column-reverse;
+
+                text-align: center;
+
+                gap: 40px;
+
+                padding-top: 160px;
+            }
+
+            .home h1 {
+                font-size: 40px;
+            }
+
+            .home h3 {
+                font-size: 20px;
+            }
+
+            .home p {
+                font-size: 16px;
+            }
+
+            .home-image img {
+                width: 230px;
+
+                height: 230px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-list {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 75px 8%;
+            }
+
+            .title {
+                font-size: 32px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            MyPortfolio
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#reviews">Reviews</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section class="home" id="home">
+
+        <div class="home-content">
+
+            <h3>
+                Hello, I'm
+            </h3>
+
+            <h1>
+                Ranjan
+                <span>Kumar Das</span>
+            </h1>
+
+            <p>
+                I'm a Web Developer who loves creating
+                modern, responsive and user-friendly
+                websites.
+            </p>
+
+            <a href="#projects" class="btn">
+                View My Work
+            </a>
+
+            <div class="social-links">
+
+                <a
+                    href="https://github.com/"
+                    target="_blank">
+                    GitHub
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank">
+                    LinkedIn
+                </a>
+
+                <a
+                    href="https://www.instagram.com/"
+                    target="_blank">
+                    Instagram
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="home-image">
+
+            <img
+                src="my photo.jpg"
+                alt="Ranjan Kumar Das">
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <h2 class="title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about">
+
+            <p>
+                Hello! My name is Ranjan Kumar Das.
+                I am passionate about web development
+                and technology. I enjoy creating beautiful
+                websites and learning new technologies.
+                My goal is to build useful and creative
+                digital experiences.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+        <h2 class="title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>HTML</span>
+                    <span>90%</span>
+                </div>
+
+                <div class="bar">
+                    <span class="html"></span>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>CSS</span>
+                    <span>85%</span>
+                </div>
+
+                <div class="bar">
+                    <span class="css"></span>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>JavaScript</span>
+                    <span>75%</span>
+                </div>
+
+                <div class="bar">
+                    <span class="js"></span>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-name">
+                    <span>Python</span>
+                    <span>70%</span>
+                </div>
+
+                <div class="bar">
+                    <span class="python"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+        <h2 class="title">
+            My <span>Projects</span>
+        </h2>
+
+        <div class="projects-container">
+
+
+            <div class="project">
+
+                <h3>
+                    Portfolio Website
+                </h3>
+
+                <p>
+                    A modern responsive personal
+                    portfolio website created using
+                    HTML, CSS and JavaScript.
+                </p>
+
+                <a href="#home" class="btn">
+                    View Project
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>
+                    Landing Page
+                </h3>
+
+                <p>
+                    A clean and responsive landing
+                    page designed for a modern
+                    business website.
+                </p>
+
+                <a href="#home" class="btn">
+                    View Project
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>
+                    JavaScript App
+                </h3>
+
+                <p>
+                    A simple interactive web
+                    application built using
+                    JavaScript.
+                </p>
+
+                <a href="#home" class="btn">
+                    View Project
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         REVIEWS
+    ========================== -->
+
+    <section id="reviews">
+
+        <h2 class="title">
+            Give Your <span>Review</span>
+        </h2>
+
+        <p class="review-subtitle">
+            What do you think about my portfolio?
+        </p>
+
+
+        <form
+            class="review-form"
+            onsubmit="submitReview(event)">
+
+            <input
+                type="text"
+                id="reviewName"
+                placeholder="Your Name"
+                required>
+
+
+            <select
+                id="reviewRating"
+                required>
+
+                <option value="">
+                    Give Rating
+                </option>
+
+                <option value="⭐">
+                    ⭐ 1 Star
+                </option>
+
+                <option value="⭐⭐">
+                    ⭐⭐ 2 Stars
+                </option>
+
+                <option value="⭐⭐⭐">
+                    ⭐⭐⭐ 3 Stars
+                </option>
+
+                <option value="⭐⭐⭐⭐">
+                    ⭐⭐⭐⭐ 4 Stars
+                </option>
+
+                <option value="⭐⭐⭐⭐⭐">
+                    ⭐⭐⭐⭐⭐ 5 Stars
+                </option>
+
+            </select>
+
+
+            <textarea
+                id="reviewText"
+                placeholder="Write your review..."
+                required>
+            </textarea>
+
+
+            <button type="submit">
+                Submit Review
+            </button>
+
+        </form>
+
+
+        <div
+            class="reviews-list"
+            id="reviewsList">
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <h2 class="title">
+            Contact <span>Me</span>
+        </h2>
+
+
+        <form
+            class="contact-form"
+            onsubmit="sendMessage(event)">
+
+            <input
+                type="text"
+                id="contactName
